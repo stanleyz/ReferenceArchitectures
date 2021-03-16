@@ -279,7 +279,7 @@
       "type": "Microsoft.Network/publicIPAddresses",
       "name": "[parameters('publicIPAddressName')]",
       "location": "[resourceGroup().location]",
-      "tags": "json([parameters('resourceTags')])",
+      "tags": "[parameters('resourceTags')]",
       "sku": {
           "name": "[parameters('publicIPType')]"
       },
@@ -294,7 +294,7 @@
       "name": "[concat(variables('nicName'), '0')]",
       "type": "Microsoft.Network/networkInterfaces",
       "location": "[resourceGroup().location]",
-      "tags": "json([parameters('resourceTags')])",
+      "tags": "[parameters('resourceTags')]",
       "apiVersion": "2015-06-15",
       "dependsOn": [
             "[concat('Microsoft.Network/publicIPAddresses/', parameters('publicIPAddressName'))]"
@@ -321,7 +321,7 @@
       "name": "[concat(variables('nicName'), '1')]",
       "type": "Microsoft.Network/networkInterfaces",
       "location": "[resourceGroup().location]",
-      "tags": "json([parameters('resourceTags')])",
+      "tags": "[parameters('resourceTags')]",
        "dependsOn": [
             ],
       "apiVersion": "2015-06-15",
@@ -345,7 +345,7 @@
       "name": "[concat(variables('nicName'), '2')]",
       "type": "Microsoft.Network/networkInterfaces",
       "location": "[resourceGroup().location]",
-      "tags": "json([parameters('resourceTags')])",
+      "tags": "[parameters('resourceTags')]",
       "apiVersion": "2015-06-15",
       "properties": {
         "enableIPForwarding": true,
@@ -368,7 +368,7 @@
         "condition": "[equals(parameters('bootstrapFirewall'),'yes')]",
         "type": "Microsoft.Compute/virtualMachines",
         "name": "[concat(parameters('vmName'),'-bs')]",
-        "tags": "json([parameters('resourceTags')])",
+        "tags": "[parameters('resourceTags')]",
         "location": "[resourceGroup().location]",
         "dependsOn": [
          "[concat('Microsoft.Network/networkInterfaces/', variables('nicName'), '0')]",
