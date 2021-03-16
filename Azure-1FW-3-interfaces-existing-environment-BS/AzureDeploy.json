@@ -228,6 +228,16 @@
       "metadata": {
         "description": "Name of existing Network Security Group for MGMT FW interface"
       }
+    },
+    "resourceTags": {
+      "type": "object",
+      "metadata": {
+        "description": "Tags applied to all the resources created in this template, including public IP, NIC, VM"
+      },
+      "defaultValue": {
+        "Environment": "prod",
+        "Application": "Palo Alto Firewall"
+      }
     }
   },
   "variables": {
