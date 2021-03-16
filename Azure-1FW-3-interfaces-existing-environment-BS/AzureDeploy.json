@@ -230,11 +230,14 @@
       }
     },
     "resourceTags": {
-      "type": "string",
+      "type": "object",
       "metadata": {
-        "description": "Tags in VALID JSON applied to all the resources created in this template, including public IP, NIC, VM"
+        "description": "Tags applied to all the resources created in this template, including public IP, NIC, VM"
       },
-      "defaultValue": "{\"Environment\":\"prod\",\"Application\":\"Palo Alto Firewall\"}"
+      "defaultValue": {
+        "Environment": "prod",
+        "Application": "Palo Alto Firewall"
+      }
     }
   },
   "variables": {
